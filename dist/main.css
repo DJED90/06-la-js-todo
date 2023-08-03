@@ -1,0 +1,74 @@
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.sass ***!
+  \*********************************************************************************************************/
+:root {
+  font-size: 100%;
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 700;
+  src: url(636be8de934918e38ed9.ttf);
+}
+body {
+  margin: 0;
+  --white:#FFFDFA;
+  --blue:#5EF6F6;
+  --orange:#F0A410;
+  --green:#42FF00;
+  --red:#F00;
+  --black:#0B0A0A;
+  --grey:#B9B8B8;
+  font-family: "Lato", sans-serif;
+  background-image: url(a64fa907c82d96af5794.webp);
+}
+
+.entete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 250px;
+}
+
+.container {
+  padding: 141px 368px 0px 377px;
+}
+
+ul {
+  min-height: 490px;
+}
+
+input[type=text] {
+  float: right;
+  font-family: "Poppins", sans-serif;
+  color: var(--brown);
+  min-height: 45px;
+  width: 425px;
+  padding: 4px 15px;
+  border: none;
+  font-size: 15px;
+  border-radius: 50px 0px 0px 50px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px var(--blackop);
+}
+
+#search-bar {
+  display: flex;
+}
+
+button[type=submit] {
+  display: flex;
+  grid-row-start: 1;
+  cursor: pointer;
+  padding: 14px 16px;
+  border-radius: 0px 25px 25px 0px;
+  background: var(--blue);
+  border: none;
+  box-shadow: 0px 4px 4px 0px var(--blackop);
+  max-height: 55px;
+}
+
+.main {
+  display: flex;
+}

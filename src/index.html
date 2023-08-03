@@ -6,6 +6,56 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="app">
+        
+    </div>
+    <template id="base-template">
+        <div class="container">
+            <div class="entete">
+                <img src="image/logo-light-mode.png" alt="image du logo de l'application" width="100" height="100">
+                <div id="search-bar">
+                    <input type="text" id="wordsearch" placeholder="Put your task here">
+                    <button id="wordsubmit" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 28 25" fill="none">
+                        <path d="M19.7899 9.80958C19.7899 14.2858 15.8134 18.1192 10.645 18.1192C5.47657 18.1192 1.5 14.2858 1.5 9.80958C1.5 5.33339 5.47657 1.5 10.645 1.5C15.8134 1.5 19.7899 5.33339 19.7899 9.80958Z" stroke="black" stroke-width="3"/>
+                        <line y1="-1.5" x2="12.283" y2="-1.5" transform="matrix(0.735373 0.677663 -0.735373 0.677663 15.9674 16.6763)" stroke="black" stroke-width="3"/>
+                      </svg></button>
+                </div>
+                <div class="toggle-switch">
+                    <label class="switch-label">
+                      <input type="checkbox" class="checkbox">
+                      <span class="slider"></span>
+                    </label>
+                </div>  
+            </div>
+            <div class="main">
+                <div class="todo">
+                    <ul>To do
+                    </ul>
+                    <div>
+                        <button>&#x271A;Add task</button>
+                    </div>
+                </div>
+                <div class="in-progress">
+                    <ul>
+                    </ul>
+                </div>
+                <div class="done">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="task-template">
+        <li><img src="" alt=""> 
+            <p id="task"></p> 
+            <p id="difficulty"></p> 
+            <button id="..." type="menu">...</button>
+            <div id="menu">
+                <button id="delete"><img src="" alt=""></button>
+                <button id="rename"><img src="" alt=""></button>
+            </div>
+        </li>
+    </template>
 </body>
 </html>
