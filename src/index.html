@@ -12,10 +12,10 @@
     <template id="base-template">
         <div class="container">
             <div class="entete">
-                <img src="image/logo-light-mode.png" alt="image du logo de l'application" width="100" height="100">
+                <img src="image/logo-light-mode.webp" alt="image du logo de l'application" width="100" height="100">
                 <div id="search-bar">
                     <input type="text" id="wordsearch" placeholder="Put your task here">
-                    <button id="wordsubmit" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 28 25" fill="none">
+                    <button id="wordsubmit" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 28 25" fill="none">
                         <path d="M19.7899 9.80958C19.7899 14.2858 15.8134 18.1192 10.645 18.1192C5.47657 18.1192 1.5 14.2858 1.5 9.80958C1.5 5.33339 5.47657 1.5 10.645 1.5C15.8134 1.5 19.7899 5.33339 19.7899 9.80958Z" stroke="black" stroke-width="3"/>
                         <line y1="-1.5" x2="12.283" y2="-1.5" transform="matrix(0.735373 0.677663 -0.735373 0.677663 15.9674 16.6763)" stroke="black" stroke-width="3"/>
                       </svg></button>
@@ -29,10 +29,10 @@
             </div>
             <div class="main">
                 <div class="todo">
-                    <ul>To do
+                    <ul id="todo_task">To do
                     </ul>
                     <div>
-                        <button>&#x271A;Add task</button>
+                        <button id="addtask">&#x271A;Add task</button>
                     </div>
                 </div>
                 <div class="in-progress">
@@ -47,13 +47,16 @@
         </div>
     </template>
     <template id="task-template">
-        <li><img src="" alt=""> 
-            <p id="task"></p> 
-            <p id="difficulty"></p> 
-            <button id="..." type="menu">...</button>
+        <li><svg id="icone-difficulty" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
+            <circle cx="12" cy="12.8993" r="11" fill="#FFFEFE" stroke="#FF0000" stroke-width="2"/>
+            <path d="M6.85712 11.9642L11.6044 16.3278L17.1428 9.47072" stroke="#FF0000" stroke-width="2"/>
+            </svg>
+            <p id="task">Go to museum</p> 
+            <p id="difficulty">Hard</p>       
             <div id="menu">
-                <button id="delete"><img src="" alt=""></button>
-                <button id="rename"><img src="" alt=""></button>
+                <button id="menutroispoints" type="menu">...</button>
+                <button id="delete"><img src="./image/bin.webp" alt="corbeille pour supprimer la tache selectionner"></button>
+                <button id="rename"><img src="./image/pencil.webp" alt="crayon pour renommé la tache selectionner"></button>
             </div>
         </li>
     </template>
