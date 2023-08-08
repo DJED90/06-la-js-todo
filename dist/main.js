@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.sass */ \"./src/style.sass\");\n\nfunction template_creation() {\n  var container = document.querySelector(\"#app\");\n  console.log(container);\n  console.log(ul);\n\n  // On récupère le template souhaité\n  var template = document.querySelector(\"#base-template\");\n  var task_template = document.querySelector(\"#task-template\");\n\n  // On clone le template \n  var clone = document.importNode(template.content, true);\n  var clone_task = document.importNode(task_template.content, true);\n\n  //On va chercher les balises de la div \"entete\"//\n  var entete = clone.querySelector(\"#entete\");\n  var ul = clone.querySelector(\"#todo_task\");\n\n  //On inject le contenu souhaité\n  container.appendChild(clone);\n  ul.appendChild(clone_task);\n}\ntemplate_creation();\n\n//# sourceURL=webpack://my-webpack-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   template_creation: () => (/* binding */ template_creation)\n/* harmony export */ });\n/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.sass */ \"./src/style.sass\");\n\nfunction template_creation() {\n  var container = document.querySelector(\"#app\");\n  console.log(container);\n\n  // On récupère le template souhaité\n  var template = document.querySelector(\"#base-template\");\n  var task_template = document.querySelector(\"#task-template\");\n\n  // On clone le template \n  var clone = document.importNode(template.content, true);\n  var clone_task = document.importNode(task_template.content, true);\n\n  //On va chercher les balises de la div \"entete\"//\n  var entete = clone.querySelector(\"#entete\");\n  var ul = clone.querySelector(\"#todo_task\");\n  var done = clone.querySelector(\"#done_task\");\n  var inprogress = clone.querySelector(\"#in-progress_task\");\n\n  //On inject le contenu souhaité\n  container.appendChild(clone);\n  ul.appendChild(clone_task);\n\n  // Clonez le modèle de tâche pour les tâches \"Done\" et ajoutez-le à la liste \"Done\"\n  var clone_task_done = document.importNode(task_template.content, true);\n  done.appendChild(clone_task_done);\n  // Clonez le modèle de tâche pour les tâches \"Done\" et ajoutez-le à la liste \"Done\"\n  var clone_task_progress = document.importNode(task_template.content, true);\n  inprogress.appendChild(clone_task_progress);\n}\ntemplate_creation();\n\n//# sourceURL=webpack://my-webpack-project/./src/index.js?");
 
 /***/ }),
 
@@ -57,6 +57,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
