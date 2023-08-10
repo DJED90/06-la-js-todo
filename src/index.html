@@ -13,7 +13,7 @@
     <template id="base-template">
         <div class="container">
             <div class="entete">
-                <img src="image/logo-light-mode.webp" alt="image du logo de l'application" width="100" height="100">
+                <img src="image/logo-light-mode.webp" id="logo" alt="image du logo de l'application" width="100" height="100">
                 <div id="search-bar">
                     <input type="text" id="wordsearch" placeholder="Put your task here">
                     <button id="wordsubmit" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 28 25" fill="none">
@@ -56,19 +56,17 @@
             <p id="difficulty">Hard</p>       
             <div id="menu">
                 <button id="menutroispoints" type="menu">...</button>
-                <button id="delete"><img src="./image/bin.webp" alt="corbeille pour supprimer la tache selectionner"width="15px" height="15px"></button>
+                <button id="delete"><img src="./image/bin.webp" alt="corbeille pour supprimer la tache selectionner" width="15px" height="15px"></button>
                 <button id="rename"><img src="./image/pencil.webp" alt="crayon pour renommé la tache selectionner" width="15px" height="15px"> </button>
             </div>
         </li>
     </template>
     <template id="task-create">
-        <body>
             <div id="addTaskForm" class="add-task-form">
               <h3>Add Task</h3>
               <form id="taskForm">
                 <label for="taskName">Task Name:</label>
                 <input type="text" id="taskName" name="taskName" required>
-            
                 <label>Difficulty:</label>
              <div class="radio-input">
               <label>

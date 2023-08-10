@@ -1,22 +1,13 @@
 export function addtask() {
     document.addEventListener("DOMContentLoaded", function () {
-        const overlay = document.createElement("div");
-        overlay.id = "overlay";
-        overlay.className = "overlay";
-        document.body.appendChild(overlay);
       
         const addTaskIcon = document.getElementById("addtask");
         const addTaskForm = document.getElementById("addTaskForm");
         const taskForm = document.getElementById("taskForm");
       
         addTaskIcon.addEventListener("click", () => {
-          overlay.style.display = "block";
-          addTaskForm.style.display = "block";
-        });
-      
-        overlay.addEventListener("click", () => {
-          overlay.style.display = "none";
-          addTaskForm.style.display = "none";
+          
+          addTaskForm.classList.add("active");
         });
       
         taskForm.addEventListener("submit", (event) => {
@@ -34,8 +25,7 @@ export function addtask() {
           // document.getElementById("todo_task").appendChild(newTaskElement);
       
           taskForm.reset();
-          overlay.style.display = "none";
-          addTaskForm.style.display = "none";
+          addTaskForm.classList.remove("active");
         });
       });
 }

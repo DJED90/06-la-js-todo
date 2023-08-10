@@ -23,6 +23,7 @@ body {
   --yellow:#F9FE02;
   font-family: "Lato", sans-serif;
   background-image: url(605119eb02e77b48d0e6.webp);
+  transition: background-image 0.8s ease;
 }
 
 .entete {
@@ -78,64 +79,6 @@ button[type=submit] {
 .main {
   display: flex;
   gap: 138px;
-}
-
-.toggle-switch {
-  position: relative;
-  width: 57px;
-  height: 28px;
-}
-
-.switch-label {
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  background-color: var(--black);
-  border-radius: 25px;
-  cursor: pointer;
-  border: 2px solid var(--white);
-}
-
-.checkbox {
-  position: absolute;
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider {
-  background-color: var(--white);
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 6.5px;
-  left: 8px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  -webkit-box-shadow: inset 4px -4px 0px 0px var(--white);
-  box-shadow: inset 7px -1px 0px 0px var(--white);
-  background-color: var(--black);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(25px);
-  -ms-transform: translateX(22.5px);
-  transform: translateX(26.5px);
-  background-color: var(--yellow);
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 
 #addtask {
@@ -205,6 +148,7 @@ li:hover {
   margin-top: 20px;
   border-radius: 5px;
   margin-left: 10px;
+  transition: margin-top 0.3s ease;
 }
 
 #task {
@@ -237,10 +181,6 @@ li:hover {
   cursor: pointer;
 }
 
-#rename + #delete + #menutroispoints {
-  animation: fade-in 8.3s ease-out;
-}
-
 #icone-difficulty {
   margin-left: 9px;
   margin-top: 20px;
@@ -249,7 +189,9 @@ li:hover {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/addtask.sass ***!
   \***********************************************************************************************************/
 .add-task-form {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5 ease, visibility 0.5 ease;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -350,4 +292,81 @@ li:hover {
 }
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
   transform: translateX(calc(var(--container_width) * 2 / 3));
+}
+
+.add-task-form.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s ease;
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/darkmode.sass ***!
+  \************************************************************************************************************/
+.toggle-switch {
+  position: relative;
+  width: 57px;
+  height: 28px;
+}
+
+.switch-label {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: var(--black);
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--white);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 6.5px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 4px -4px 0px 0px var(--white);
+  box-shadow: inset 7px -1px 0px 0px var(--white);
+  background-color: var(--black);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(22.5px);
+  transform: translateX(26.5px);
+  background-color: var(--yellow);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+body.dark-mode {
+  background-image: url(b80505b76d4b50273a5f.jpg);
+}
+
+.dark-transition {
+  transition: background-image 0.8s ease;
+}
+
+ul.dark-mode {
+  color: white;
 }

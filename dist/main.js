@@ -16,7 +16,17 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addtask: () => (/* binding */ addtask)\n/* harmony export */ });\nfunction addtask() {\n  document.addEventListener(\"DOMContentLoaded\", function () {\n    var overlay = document.createElement(\"div\");\n    overlay.id = \"overlay\";\n    overlay.className = \"overlay\";\n    document.body.appendChild(overlay);\n    var addTaskIcon = document.getElementById(\"addtask\");\n    var addTaskForm = document.getElementById(\"addTaskForm\");\n    var taskForm = document.getElementById(\"taskForm\");\n    addTaskIcon.addEventListener(\"click\", function () {\n      overlay.style.display = \"block\";\n      addTaskForm.style.display = \"block\";\n    });\n    overlay.addEventListener(\"click\", function () {\n      overlay.style.display = \"none\";\n      addTaskForm.style.display = \"none\";\n    });\n    taskForm.addEventListener(\"submit\", function (event) {\n      event.preventDefault();\n      var taskName = document.getElementById(\"taskName\").value;\n      var difficulty = document.getElementById(\"difficulty\").value;\n\n      // Ajoutez ici la logique pour ajouter la tâche à votre liste\n      // Créez un nouvel élément li en utilisant les données du formulaire et ajoutez-le à la liste appropriée\n      // Puis réinitialisez le formulaire et cachez le formulaire\n      // Par exemple :\n      // const newTaskElement = document.createElement(\"li\");\n      // newTaskElement.innerHTML = `...`; // Utilisez les données du formulaire pour personnaliser le contenu\n      // document.getElementById(\"todo_task\").appendChild(newTaskElement);\n\n      taskForm.reset();\n      overlay.style.display = \"none\";\n      addTaskForm.style.display = \"none\";\n    });\n  });\n}\n\n//# sourceURL=webpack://my-webpack-project/./src/addtask.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addtask: () => (/* binding */ addtask)\n/* harmony export */ });\nfunction addtask() {\n  document.addEventListener(\"DOMContentLoaded\", function () {\n    var addTaskIcon = document.getElementById(\"addtask\");\n    var addTaskForm = document.getElementById(\"addTaskForm\");\n    var taskForm = document.getElementById(\"taskForm\");\n    addTaskIcon.addEventListener(\"click\", function () {\n      addTaskForm.classList.add(\"active\");\n    });\n    taskForm.addEventListener(\"submit\", function (event) {\n      event.preventDefault();\n      var taskName = document.getElementById(\"taskName\").value;\n      var difficulty = document.getElementById(\"difficulty\").value;\n\n      // Ajoutez ici la logique pour ajouter la tâche à votre liste\n      // Créez un nouvel élément li en utilisant les données du formulaire et ajoutez-le à la liste appropriée\n      // Puis réinitialisez le formulaire et cachez le formulaire\n      // Par exemple :\n      // const newTaskElement = document.createElement(\"li\");\n      // newTaskElement.innerHTML = `...`; // Utilisez les données du formulaire pour personnaliser le contenu\n      // document.getElementById(\"todo_task\").appendChild(newTaskElement);\n\n      taskForm.reset();\n      addTaskForm.classList.remove(\"active\");\n    });\n  });\n}\n\n//# sourceURL=webpack://my-webpack-project/./src/addtask.js?");
+
+/***/ }),
+
+/***/ "./src/darkmode.js":
+/*!*************************!*\
+  !*** ./src/darkmode.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   toggleDarkMode: () => (/* binding */ toggleDarkMode)\n/* harmony export */ });\n// Fonction pour mettre à jour le mode sombre\nfunction toggleDarkMode() {\n  var toggleSwitch = document.querySelector(\".checkbox\");\n  var container = document.querySelector(\"body\");\n  var logoElement = document.querySelector(\"#logo\");\n  var ul = document.querySelector(\"ul\");\n  var originalLogoSrc = logoElement.src;\n  toggleSwitch.addEventListener(\"change\", function () {\n    if (toggleSwitch.checked) {\n      logoElement.src = \"./image/logo-dark-mode.webp\";\n      container.classList.add(\"dark-mode\", \"dark-transition\");\n      ul.classList.add(\"dark-mode\");\n    } else {\n      logoElement.src = originalLogoSrc;\n      container.classList.remove(\"dark-mode\", \"dark-transition\");\n      ul.classList.remove(\"dark-mode\");\n    }\n  });\n}\n\n//# sourceURL=webpack://my-webpack-project/./src/darkmode.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.sass */ \"./src/style.sass\");\n/* harmony import */ var _addtask_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addtask.sass */ \"./src/addtask.sass\");\n/* harmony import */ var _template_creation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./template_creation */ \"./src/template_creation.js\");\n/* harmony import */ var _addtask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addtask */ \"./src/addtask.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n\n\n\n\n\n(0,_template_creation__WEBPACK_IMPORTED_MODULE_2__.template_creation)();\n(0,_menu__WEBPACK_IMPORTED_MODULE_4__.menu)();\n(0,_addtask__WEBPACK_IMPORTED_MODULE_3__.addtask)();\n\n//# sourceURL=webpack://my-webpack-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.sass */ \"./src/style.sass\");\n/* harmony import */ var _addtask_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addtask.sass */ \"./src/addtask.sass\");\n/* harmony import */ var _darkmode_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./darkmode.sass */ \"./src/darkmode.sass\");\n/* harmony import */ var _template_creation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./template_creation */ \"./src/template_creation.js\");\n/* harmony import */ var _addtask__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addtask */ \"./src/addtask.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _darkmode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./darkmode */ \"./src/darkmode.js\");\n\n\n\n\n\n\n\n(0,_template_creation__WEBPACK_IMPORTED_MODULE_3__.template_creation)();\n(0,_menu__WEBPACK_IMPORTED_MODULE_5__.menu)();\n(0,_addtask__WEBPACK_IMPORTED_MODULE_4__.addtask)();\n(0,_darkmode__WEBPACK_IMPORTED_MODULE_6__.toggleDarkMode)();\n\n//# sourceURL=webpack://my-webpack-project/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   menu: () => (/* binding */ menu)\n/* harmony export */ });\nfunction menu() {\n  var menu = document.querySelector(\"#menutroispoints\");\n  var rename = document.querySelector(\"#rename\");\n  var supr = document.querySelector(\"#delete\");\n  menu.addEventListener(\"click\", function (e) {\n    if (rename.style.display == \"none\" && supr.style.display == \"none\") {\n      rename.style.display = \"block\";\n      supr.style.display = \"block\";\n    } else {\n      rename.style.display = \"none\";\n      supr.style.display = \"none\";\n    }\n  });\n}\n\n//# sourceURL=webpack://my-webpack-project/./src/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   menu: () => (/* binding */ menu)\n/* harmony export */ });\nfunction menu() {\n  var menus = document.querySelectorAll(\"#menutroispoints\");\n  var renames = document.querySelectorAll(\"#rename\");\n  var suprs = document.querySelectorAll(\"#delete\");\n  var meenus = document.querySelectorAll(\"menu\");\n  menus.forEach(function (menu, index) {\n    menu.addEventListener(\"click\", function (e) {\n      if (renames[index].style.display === \"none\" && suprs[index].style.display === \"none\") {\n        renames[index].style.display = \"block\";\n        suprs[index].style.display = \"block\";\n        menu.parentElement.style.marginTop = \"80px\";\n      } else {\n        renames[index].style.display = \"none\";\n        suprs[index].style.display = \"none\";\n        menu.parentElement.style.marginTop = \"20px\";\n      }\n    });\n  });\n}\n;\n\n//# sourceURL=webpack://my-webpack-project/./src/menu.js?");
 
 /***/ }),
 
@@ -57,6 +67,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://my-webpack-project/./src/addtask.sass?");
+
+/***/ }),
+
+/***/ "./src/darkmode.sass":
+/*!***************************!*\
+  !*** ./src/darkmode.sass ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://my-webpack-project/./src/darkmode.sass?");
 
 /***/ }),
 

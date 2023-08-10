@@ -1,17 +1,21 @@
 export function menu(){
-    const menu = document.querySelector("#menutroispoints");
-    const rename = document.querySelector("#rename");
-    const supr = document.querySelector("#delete");
-    menu.addEventListener("click", (e) => {
-        if(rename.style.display == "none" && supr.style.display == "none"){
-            rename.style.display = "block";
-            supr.style.display = "block";
-            
-        }
-        else {
-            rename.style.display = "none";
-            supr.style.display = "none";
-        }
-
-    })
-}
+    const menus = document.querySelectorAll("#menutroispoints");
+    const renames = document.querySelectorAll("#rename");
+    const suprs = document.querySelectorAll("#delete");
+    const meenus = document.querySelectorAll("menu");
+    
+    menus.forEach((menu, index) => {
+        menu.addEventListener("click", (e) => {
+            if(renames[index].style.display === "none" && suprs[index].style.display === "none"){
+                renames[index].style.display = "block";
+                suprs[index].style.display = "block";
+                menu.parentElement.style.marginTop = "80px";
+            }
+            else {
+                renames[index].style.display = "none";
+                suprs[index].style.display = "none";
+                menu.parentElement.style.marginTop = "20px";
+            }
+        });
+    });
+};
