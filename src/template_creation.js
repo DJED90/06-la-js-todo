@@ -24,13 +24,6 @@ const inprogress = clone.querySelector("#in-progress_task");
 
 //On inject le contenu souhaité
 container.appendChild(clone);
-ul.appendChild(clone_task);
 container.appendChild(clone_addtask);
 
-// Clonez le modèle de tâche pour les tâches "Done" et ajoutez-le à la liste "Done"
-const clone_task_done = document.importNode(task_template.content, true);
-done.appendChild(clone_task_done);
-// Clonez le modèle de tâche pour les tâches "In-progress" et ajoutez-le à la liste "In-progress"
-const clone_task_progress = document.importNode(task_template.content, true);
-inprogress.appendChild(clone_task_progress);
 }
