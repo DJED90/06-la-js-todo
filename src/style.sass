@@ -21,6 +21,18 @@ body
   background-image: url(./image/background-light.webp)
   transition: background-image 0.8s ease
 
+*
+  &::-webkit-scrollbar
+    width: 6px
+
+  &::-webkit-scrollbar-track
+    background: #f7f7f7
+
+  &::-webkit-scrollbar-thumb
+    background-color: #8b878c
+    border-radius: 10px
+    border: 3px none #ffffff
+
 .entete
   display: flex
   justify-content: center
@@ -33,10 +45,16 @@ body
 
 ul
   min-height: 490px
+  max-height: 550px
+  overflow-x : hidden
+  overflow-y: auto
   list-style-type: none
   font-size: 27px
-  width: 300px
+  width: 320px
   padding: 0px
+  margin-bottom: 20px
+  margin-top: 0px
+  
 
 input[type=text]
   float: right
@@ -98,6 +116,8 @@ li
   transition: all 300ms
   box-sizing: border-box
   cursor: grab
+  width: 300px
+  margin-left: 10px
 
 li:hover
   outline: 1px solid var(--dark)
@@ -108,7 +128,7 @@ li:hover
   grid-column-start: 2
   grid-row-start: 2
 
-#menutroispoints 
+.menutroispoints 
   height: 25px
   width: 30px
   grid-column-start: 3
@@ -148,13 +168,13 @@ li:hover
   border-radius: 20px
   margin-top: 0px
 
-#delete 
+.delete 
   display: none
   background-color : var(--white)
   border: none
   cursor: pointer
 
-#rename
+.rename
   display: none
   background-color : var(--white)
   border: none

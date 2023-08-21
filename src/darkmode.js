@@ -3,22 +3,35 @@ export function toggleDarkMode() {
     const toggleSwitch = document.querySelector(".checkbox");
     const container = document.querySelector("body");
     const logoElement = document.querySelector("#logo");
-    const ul = document.querySelector("ul");
-    const li = document.querySelector("li");
     const originalLogoSrc = logoElement.src;
 
     toggleSwitch.addEventListener("change", () => {
         if (toggleSwitch.checked) {
             logoElement.src = "./image/logo-dark-mode.webp";
             container.classList.add("dark-mode", "dark-transition");
-            ul.classList.add("dark-mode");
-            li.classList.add("dark-mode");
+            applyDarkModeToElements("ul");
+            applyDarkModeToElements("li");
+            applyDarkModeToElements("#addtask");
         } else {
             logoElement.src = originalLogoSrc;
             container.classList.remove("dark-mode", "dark-transition");
-            ul.classList.remove("dark-mode");
-            li.classList.remove("dark-mode");
+            removeDarkModeFromElements("ul");
+            removeDarkModeFromElements("li");
+            removeDarkModeFromElements("#addtask");
         }
     });
+    function applyDarkModeToElements(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.classList.add("dark-mode");
+        });
+    }
+    
+    function removeDarkModeFromElements(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.classList.remove("dark-mode");
+        });
+    }
 }
 

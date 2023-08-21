@@ -1,3 +1,5 @@
+import { menu } from "./menu";
+
 export function addtask() {
     document.addEventListener("DOMContentLoaded", function () {
       
@@ -37,6 +39,7 @@ export function addtask() {
 
           taskForm.reset();
           addTaskForm.classList.remove("active");
+          menu();
         });
       });
 }

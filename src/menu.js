@@ -1,8 +1,7 @@
 export function menu(){
-    const menus = document.querySelectorAll("#menutroispoints");
-    const renames = document.querySelectorAll("#rename");
-    const suprs = document.querySelectorAll("#delete");
-    const meenus = document.querySelectorAll("menu");
+    const menus = document.querySelectorAll(".menutroispoints");
+    const renames = document.querySelectorAll(".rename");
+    const suprs = document.querySelectorAll(".delete");
     
     menus.forEach((menu, index) => {
         menu.addEventListener("click", (e) => {
