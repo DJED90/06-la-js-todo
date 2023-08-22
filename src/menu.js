@@ -1,3 +1,5 @@
+
+
 export function menu(){
     const menus = document.querySelectorAll(".menutroispoints");
     const renames = document.querySelectorAll(".rename");

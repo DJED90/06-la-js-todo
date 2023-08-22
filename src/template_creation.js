@@ -1,6 +1,5 @@
 export function template_creation(){
     const container = document.querySelector("#app");
-    console.log(container);
 
 
 // On récupère le template souhaité
