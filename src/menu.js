@@ -1,12 +1,10 @@
-
-
 export function menu(){
     const menus = document.querySelectorAll(".menutroispoints");
     const renames = document.querySelectorAll(".rename");
     const suprs = document.querySelectorAll(".delete");
     
     menus.forEach((menu, index) => {
-        menu.addEventListener("click", (e) => {
+        menu.addEventListener("click", () => {
             if(renames[index].style.display === "none" && suprs[index].style.display === "none"){
                 renames[index].style.display = "block";
                 suprs[index].style.display = "block";

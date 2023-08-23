@@ -2,6 +2,7 @@
 import { menu } from "./menu";
 import { toggleDarkMode } from "./darkmode";
 
+
 export function addtask() {
     document.addEventListener("DOMContentLoaded", function () {
       
@@ -22,6 +23,7 @@ export function addtask() {
           event.preventDefault();
           const task_template = document.querySelector("#task-template");
           const clone_task = task_template.content.cloneNode(true);
+          
           const difficultySelect = document.querySelector("input[name='difficulty']:checked");
 
           const taskInput = document.querySelector("#taskName").value;
@@ -63,6 +65,7 @@ export function addtask() {
         };
         //Cette ligne récupère les données enregistrées sous la clé "tasks" dans le localStorage.
         const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        console.log(savedTasks);
         const todoList = document.getElementById("todo_task");
         savedTasks.forEach(savedTask => {
           if (!savedTask.deleted) {
@@ -72,15 +75,16 @@ export function addtask() {
             clone_task.querySelector("#difficulty").textContent = savedTask.difficulty;
             clone_task.querySelector("#difficulty").style.backgroundColor = difficultyColors[savedTask.difficulty];
             todoList.appendChild(clone_task);
-            menu();
-            removetask();
+
           }
         });
+        renametask();
+        removetask();
+        menu();
       });
 }
 export function removetask() {
   const remove = document.querySelectorAll(".delete");
-  console.log(remove);
   remove.forEach(removeTask => {
     removeTask.addEventListener("click", () => {
       
@@ -91,14 +95,29 @@ export function removetask() {
         taskElement.classList.add("deleted");
         //Mettre à jour le localStorage pour garder en savegarde la suppression de la tâche
         updateLocalStorage();
-        menu();
       }
     });
   });
 }
+export function renametask(){
+  const rename = document.querySelectorAll(".rename");
+  rename.forEach(renameTask => {
+    renameTask.addEventListener("click", ()=> {
+      const task = document.querySelector("#task");
+      console.dir(renameTask.parentElement.parentElement.childNodes[2]);
+      const taskElement = renameTask.parentElement.parentElement.childNodes[2];
+      console.log(taskElement);
+      if (taskElement) {
+        console.log(taskElement);
+        taskElement.contentEditable = true;
+
+      }
+    })
+  })
+}
 export function updateLocalStorage() {
   const tasks = [];
-  const taskElements = document.querySelectorAll(".task");
+  const taskElements = document.querySelectorAll("li");
   taskElements.forEach(taskElement => {
     if (!taskElement.classList.contains("deleted")) { // Exclure les tâches supprimées
       const taskName = taskElement.querySelector("#task").textContent;
