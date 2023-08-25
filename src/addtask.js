@@ -1,6 +1,7 @@
 //J'importe la fonction menu afin de pouvoir ciblé les tâches crées avec ma fonction "menu"
 import { menu } from "./menu";
 import { toggleDarkMode } from "./darkmode";
+import { draganddrop } from "./drag-and-drop";
 
 
 export function addtask() {
@@ -46,6 +47,7 @@ export function addtask() {
           toggleDarkMode();
           menu();
           removetask();
+          draganddrop();
 
           //Sauvegarde des tâches dans le localstorage
           // Cette ligne de code récupère le contenu associé à la clé "tasks" dans le localStorage. La méthode getItem est utilisée pour récupérer la valeur de la clé "tasks". La valeur est stockée en tant que chaîne JSON, donc nous utilisons JSON.parse pour la convertir en un tableau JavaScript. Si la clé "tasks" n'existe pas ou si elle est vide, le || [] à la fin garantit que nous initialisons tasks avec un tableau vide.
@@ -81,6 +83,7 @@ export function addtask() {
         renametask();
         removetask();
         menu();
+        draganddrop();
       });
 }
 export function removetask() {
@@ -99,21 +102,27 @@ export function removetask() {
     });
   });
 }
-export function renametask(){
+export function renametask() {
   const rename = document.querySelectorAll(".rename");
   rename.forEach(renameTask => {
-    renameTask.addEventListener("click", ()=> {
-      const task = document.querySelector("#task");
-      console.dir(renameTask.parentElement.parentElement.childNodes[2]);
-      const taskElement = renameTask.parentElement.parentElement.childNodes[2];
-      console.log(taskElement);
-      if (taskElement) {
-        console.log(taskElement);
-        taskElement.contentEditable = true;
+    renameTask.addEventListener("click", () => {
+      const taskElement = renameTask.parentElement.parentElement;
+      const taskNameElement = taskElement.querySelector("#task");
 
+      if (taskElement) {
+        taskNameElement.contentEditable = true;
+        taskNameElement.classList.add("renamed");
+
+        taskNameElement.addEventListener("focusout", () => {
+          taskNameElement.contentEditable = false;
+          taskNameElement.classList.remove("renamed");
+
+          // Update the task name in localStorage
+          updateLocalStorage();
+        });
       }
-    })
-  })
+    });
+  });
 }
 export function updateLocalStorage() {
   const tasks = [];

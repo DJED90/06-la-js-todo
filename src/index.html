@@ -30,25 +30,25 @@
             </div>
             <div class="main">
                 <div class="todo">
-                    <ul id="todo_task">To do
+                    <ul id="todo_task" ondragover="allowDrop(event)">To do
                     </ul>
                     <div>
                         <button id="addtask">Add task</button>
                     </div>
                 </div>
                 <div class="in-progress">
-                    <ul id="in-progress_task">In Progress
+                    <ul id="in-progress_task" ondragover="allowDrop(event)" >In Progress
                     </ul>
                 </div>
                 <div class="done">
-                    <ul id="done_task">Done
+                    <ul id="done_task" ondragover="allowDrop(event)">Done
                     </ul>
                 </div>
             </div>
         </div>
     </template>
     <template id="task-template">
-        <li draggable="true"><svg id="icone-difficulty" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
+        <li draggable="true" ondragstart="drag(event)"><svg id="icone-difficulty" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
             <circle cx="12" cy="12.8993" r="11" fill="#FFFEFE" stroke="#FF0000" stroke-width="2"/>
             <path d="M6.85712 11.9642L11.6044 16.3278L17.1428 9.47072" stroke="#FF0000" stroke-width="2"/>
             </svg>
