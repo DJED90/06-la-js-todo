@@ -67,7 +67,7 @@ export function addtask() {
         });
         importfunction();
       });
-}
+};
 export function removetask() {
   const remove = document.querySelectorAll(".delete");
 

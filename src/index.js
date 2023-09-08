@@ -7,8 +7,8 @@ import { menu } from "./menu";
 import { toggleDarkMode } from "./darkmode";
 import { draganddrop} from "./drag-and-drop";
 import { search } from "./search";
+template_creation();
 export function importfunction(){
-    template_creation();
     addtask();
     toggleDarkMode();
     menu();
