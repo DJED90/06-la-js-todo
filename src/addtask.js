@@ -1,7 +1,6 @@
 //J'importe la fonction menu afin de pouvoir ciblé les tâches crées avec ma fonction "menu"
 import {importfunction} from  "./index";
 
-
 export function addtask() {
     document.addEventListener("DOMContentLoaded", function () {
       const addTaskIcon = document.getElementById("addtask");
