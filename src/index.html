@@ -29,35 +29,37 @@
                 </div>  
             </div>
             <div class="main">
-                <div class="todo">
-                    <ul id="todo_task" ondragover="allowDrop(event)">To do
+                <div class="todo" id="to-do" class="task-status">
+                    <ul id="todo_task">To do
                     </ul>
                     <div>
                         <button id="addtask">Add task</button>
                     </div>
                 </div>
-                <div class="in-progress">
-                    <ul id="in-progress_task" ondragover="allowDrop(event)" >In Progress
+                <div class="in-progress" id="to-do" class="task-status" >
+                    <ul id="in-progress_task" >In Progress
                     </ul>
                 </div>
-                <div class="done">
-                    <ul id="done_task" ondragover="allowDrop(event)">Done
+                <div class="done" id="to-do" class="task-status">
+                    <ul id="done_task">Done
                     </ul>
                 </div>
             </div>
         </div>
     </template>
     <template id="task-template">
-        <li draggable="true" ondragstart="drag(event)"><svg id="icone-difficulty" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
-            <circle cx="12" cy="12.8993" r="11" fill="#FFFEFE" stroke="#FF0000" stroke-width="2"/>
-            <path d="M6.85712 11.9642L11.6044 16.3278L17.1428 9.47072" stroke="#FF0000" stroke-width="2"/>
+        <li draggable="true" class="task-element">
+            <svg id="icone-difficulty" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
+            <circle id="circle" cx="12" cy="12.8993" r="11" fill="#FFFEFE" stroke="#FF0000" stroke-width="2"/>
+            <path id="path" d="M6.85712 11.9642L11.6044 16.3278L17.1428 9.47072" stroke="#FF0000" stroke-width="2"/>
             </svg>
             <p id="task" contenteditable="false">Go to museum</p> 
             <p id="difficulty">Hard</p>       
             <div id="menu">
                 <button class="menutroispoints" id="test" type="menu">...</button>
                 <button class="delete"><img src="./image/bin.webp" alt="corbeille pour supprimer la tache selectionner" width="15px" height="15px"></button>
-                <button class="rename"><img src="./image/pencil.webp" alt="crayon pour renommé la tache selectionner" width="15px" height="15px"> </button>
+                <button class="rename"><img src="./image/pencil.webp" alt="crayon pour renommé la tache selectionner" width="15px" height="15px"></button>
+                <button class="change"><img src="./image/change.webp" alt="icone pour changer la position de la tâche" width="15px" height="15px"></button>
             </div>
         </li>
     </template>
@@ -72,26 +74,56 @@
                 <h3>Add Task</h3>
                 <form id="taskForm">
                 <label for="taskName">Task Name:</label>
-                <input type="text" id="taskName" name="taskName" required>
+                <input type="text" id="taskName" name="taskName" required >
                 <label>Difficulty:</label>
              <div class="radio-input">
               <label>
               <input type="radio" id="Easy" name="difficulty" value="Easy">
-              <span>Easy</span>
+              <span id= speasy>Easy</span>
               </label>
               <label>
                 <input type="radio" id="Medium" name="difficulty" value="Medium">
-              <span>Medium</span>
+              <span id= spmedium>Medium</span>
               </label>
               <label>
                 <input type="radio" id="Hard" name="difficulty" value="Hard">
-              <span>Hard</span>
+              <span id = sphard>Hard</span>
               </label>
               <span class="selection"></span>
             </div>      
-                <button type="submit">Add Task</button>
+                <button type="submit" data-action="addtask" id="button-addtask">Add Task</button>
               </form>
             </div>
     </template>
+    <template id="task-change">
+        <div id="changeTaskForm" class="change-task-form">
+            <svg id="crosschange" height="15px" width="15px" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve"><path style="fill:#FF6465;" d="M384.955,256l120.28-120.28c9.019-9.019,9.019-23.642,0-32.66L408.94,6.765
+            c-9.019-9.019-23.642-9.019-32.66,0l-120.28,120.28L135.718,6.765c-9.019-9.019-23.642-9.019-32.66,0L6.764,103.058
+            c-9.019,9.019-9.019,23.642,0,32.66l120.28,120.28L6.764,376.28c-9.019,9.019-9.019,23.642,0,32.66l96.295,96.294
+            c9.019,9.019,23.642,9.019,32.66,0l120.28-120.28l120.28,120.28c9.019,9.019,23.642,9.019,32.66,0l96.295-96.294
+            c9.019-9.019,9.019-23.642,0-32.66L384.955,256z"/>
+            </svg>
+            <h3>Change Task</h3>
+            <form id="taskForm">
+            <label>List:</label>
+         <div class="radio-input">
+          <label>
+          <input type="radio" id="to-do" name="list" value="to-do">
+          <span id= sptodo>To-do</span>
+          </label>
+          <label>
+            <input type="radio" id="in-progress" name="list" value="in-progress">
+          <span id= spminprogress>In-progress</span>
+          </label>
+          <label>
+            <input type="radio" id="done" name="list" value="done">
+          <span id = spdone>Done</span>
+          </label>
+          <span class="selection"></span>
+        </div>      
+            <button type="submit" data-action="changetask" id="button-changetask">Change Task</button>
+          </form>
+        </div>
+</template>
 </body>
 </html>

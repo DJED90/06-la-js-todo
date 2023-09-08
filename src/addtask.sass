@@ -7,14 +7,14 @@
   left: 50%
   transform: translate(-50%, -50%)
   background-color: #FFFDFA
-  padding: 20px
+  padding: 1.25rem
   z-index: 1001
-  border-radius: 5px
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2)
+  border-radius: 0.3125rem
+  box-shadow: 0px 0.125rem 0.625rem rgba(0, 0, 0, 0.2)
 
 
   #cross
-    margin-left : 285px
+    margin-left : 17.8125rem
     cursor: pointer
   h3
     display: flex
@@ -24,42 +24,41 @@
 
   label
     display: block
-    margin-top: 5px
-    margin-bottom: 10px
+    margin-top: 0.3125rem
+    margin-bottom: 0.625rem
 
   input, select
     width: 100%
-    padding: 5px
-    margin-top: 5px
-    border: 1px solid #ccc
-    border-radius: 3px
-    margin-bottom: 10px
+    padding: 0.3125rem
+    margin-top: 0.3125rem
+    border: 0.0625rem solid #ccc
+    border-radius: 0.1875rem
+    margin-bottom: 0.625rem
 
   button
     display: block
-    margin-top: 10px
+    margin-top: 0.625rem
     background-color: #007bff
     color: white
     border: none
-    padding: 5px 10px
+    padding: 0.3125rem 0.625rem
     border-radius: 3px
     cursor: pointer
 
 .radio-input
   input
     display: none
-
-  --container_width:300px
+  --container_width:18.75rem
   position: relative
   display: flex
   align-items: center
-  border-radius: 10px
+  border-radius: 0.625rem
   background-color: #fff
   color: #000000
   width: var(--container_width)
   overflow: hidden
   border: 1px solid rgba(53, 52, 52, 0.226)
-  margin-bottom: 25px
+  margin-bottom: 1.5625rem
 
   label
     width: 100%
@@ -109,3 +108,93 @@
   opacity: 1
   visibility: visible
   transition: opacity 0.8s ease
+
+.change-task-form
+  opacity:0
+  visibility: hidden
+  transition: opacity 0.5 ease, visibility 0.5 ease
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-color: #FFFDFA
+  padding: 1.25rem
+  z-index: 1001
+  border-radius: 0.3125rem
+  box-shadow: 0px 0.125rem 0.625rem rgba(0, 0, 0, 0.2)
+  #crosschange
+    margin-left : 17.8125rem
+    cursor: pointer
+  h3
+    display: flex
+    justify-content: center
+    margin-top: 0
+    align-items: center
+
+  label
+    display: block
+    margin-top: 0.3125rem
+    margin-bottom: 0.625rem
+
+  input, select
+    width: 100%
+    padding: 0.3125rem
+    margin-top: 0.3125rem
+    border: 0.0625rem solid #ccc
+    border-radius: 0.1875rem
+    margin-bottom: 0.625rem
+
+  button
+    display: block
+    margin-top: 0.625rem
+    background-color: #007bff
+    color: white
+    border: none
+    padding: 0.3125rem 0.625rem
+    border-radius: 3px
+    cursor: pointer
+
+.radio-input
+  input
+    display: none
+  --container_width:18.75rem
+  position: relative
+  display: flex
+  align-items: center
+  border-radius: 0.625rem
+  background-color: #fff
+  color: #000000
+  width: var(--container_width)
+  overflow: hidden
+  border: 1px solid rgba(53, 52, 52, 0.226)
+  margin-bottom: 1.5625rem
+
+  label
+    width: 100%
+    padding: 1px
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 1
+    font-weight: 600
+    letter-spacing: -1px
+    font-size: 14px
+
+.change-task-form.active
+  opacity: 1
+  visibility: visible
+  transition: opacity 0.8s ease
+
+@media (320px <= width <= 480px)
+
+  .radio-input
+    --container_width:15.625rem
+  .add-task-form
+    #cross
+      margin-left : 235px
+  .change-task-form.active
+    width: 250px
+  .change-task-form
+    #crosschange
+      margin-left : 235px
