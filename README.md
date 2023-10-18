@@ -85,5 +85,7 @@ Vistaprint-Logo (pour la création du logo)
 
 GIT/GITHUB/GITPAGE (pour le contrôle de version et le déploiement)
 
+Publication sur GitHub Pages Ce projet est hébergé sur GitHub Pages, ce qui signifie que vous pouvez accéder à l'application en ligne en suivant le lien : [https://djed90.github.io/05-lab-dictionnary/.](https://djed90.github.io/06-la-js-todo/)
+
 
 C'est tout pour le README de cette application de dictionnaire. Si vous avez des questions ou avez besoin de plus d'informations, n'hésitez pas à nous contacter. Bonne utilisation de l'application !
